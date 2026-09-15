@@ -1,0 +1,77 @@
+[
+ {"start": 0.08, "end": 0.42, "text": "Thanks", "speaker": "speaker_0"},
+ {"start": 0.44, "end": 0.61, "text": "for", "speaker": "speaker_0"},
+ {"start": 0.63, "end": 1.02, "text": "calling", "speaker": "speaker_0"},
+ {"start": 1.05, "end": 1.58, "text": "Northside", "speaker": "speaker_0"},
+ {"start": 1.61, "end": 2.10, "text": "Dental.", "speaker": "speaker_0"},
+ {"start": 2.30, "end": 2.52, "text": "This", "speaker": "speaker_0"},
+ {"start": 2.54, "end": 2.68, "text": "is", "speaker": "speaker_0"},
+ {"start": 2.70, "end": 3.14, "text": "Riley.", "speaker": "speaker_0"},
+ {"start": 3.40, "end": 3.72, "text": "What", "speaker": "speaker_0"},
+ {"start": 3.74, "end": 3.88, "text": "can", "speaker": "speaker_0"},
+ {"start": 3.90, "end": 4.02, "text": "I", "speaker": "speaker_0"},
+ {"start": 4.04, "end": 4.26, "text": "do", "speaker": "speaker_0"},
+ {"start": 4.28, "end": 4.44, "text": "for", "speaker": "speaker_0"},
+ {"start": 4.46, "end": 4.78, "text": "you?", "speaker": "speaker_0"},
+
+ {"start": 6.20, "end": 6.42, "text": "Hi.", "speaker": "speaker_1"},
+ {"start": 6.70, "end": 6.84, "text": "I'd", "speaker": "speaker_1"},
+ {"start": 6.86, "end": 7.08, "text": "like", "speaker": "speaker_1"},
+ {"start": 7.10, "end": 7.22, "text": "to", "speaker": "speaker_1"},
+ {"start": 7.24, "end": 7.56, "text": "book", "speaker": "speaker_1"},
+ {"start": 7.58, "end": 7.68, "text": "a", "speaker": "speaker_1"},
+ {"start": 7.70, "end": 8.26, "text": "cleaning", "speaker": "speaker_1"},
+ {"start": 8.28, "end": 8.55, "text": "next", "speaker": "speaker_1"},
+ {"start": 8.57, "end": 8.96, "text": "week.", "speaker": "speaker_1"},
+
+ {"start": 10.30, "end": 10.58, "text": "Let", "speaker": "speaker_0"},
+ {"start": 10.60, "end": 10.72, "text": "me", "speaker": "speaker_0"},
+ {"start": 10.74, "end": 11.02, "text": "check", "speaker": "speaker_0"},
+ {"start": 11.04, "end": 11.16, "text": "the", "speaker": "speaker_0"},
+ {"start": 11.18, "end": 11.72, "text": "schedule.", "speaker": "speaker_0"},
+
+ {"start": 12.05, "end": 12.28, "text": "mhm", "speaker": "speaker_1"},
+
+ {"start": 12.60, "end": 12.74, "text": "Are", "speaker": "speaker_0"},
+ {"start": 12.76, "end": 12.98, "text": "mornings", "speaker": "speaker_0"},
+ {"start": 13.00, "end": 13.24, "text": "okay?", "speaker": "speaker_0"},
+
+ {"start": 14.10, "end": 14.42, "text": "Mornings", "speaker": "speaker_1"},
+ {"start": 14.44, "end": 14.66, "text": "are", "speaker": "speaker_1"},
+ {"start": 14.68, "end": 15.02, "text": "best.", "speaker": "speaker_1"},
+
+ {"start": 18.64, "end": 18.82, "text": "I've", "speaker": "speaker_0"},
+ {"start": 18.84, "end": 19.04, "text": "got", "speaker": "speaker_0"},
+ {"start": 19.06, "end": 19.48, "text": "Monday", "speaker": "speaker_0"},
+ {"start": 19.50, "end": 19.62, "text": "at", "speaker": "speaker_0"},
+ {"start": 19.64, "end": 20.02, "text": "eight", "speaker": "speaker_0"},
+ {"start": 20.04, "end": 20.14, "text": "or", "speaker": "speaker_0"},
+ {"start": 20.16, "end": 20.62, "text": "Tuesday", "speaker": "speaker_0"},
+ {"start": 20.64, "end": 20.76, "text": "at", "speaker": "speaker_0"},
+ {"start": 20.78, "end": 21.14, "text": "nine.", "speaker": "speaker_0"},
+
+ {"start": 22.02, "end": 22.44, "text": "Monday", "speaker": "speaker_1"},
+ {"start": 22.46, "end": 22.84, "text": "works.", "speaker": "speaker_1"},
+
+ {"start": 25.88, "end": 26.16, "text": "Booked", "speaker": "speaker_0"},
+ {"start": 26.18, "end": 26.30, "text": "for", "speaker": "speaker_0"},
+ {"start": 26.32, "end": 26.74, "text": "Monday", "speaker": "speaker_0"},
+ {"start": 26.76, "end": 26.88, "text": "at", "speaker": "speaker_0"},
+ {"start": 26.90, "end": 27.28, "text": "eight.", "speaker": "speaker_0"},
+ {"start": 27.50, "end": 27.74, "text": "Should", "speaker": "speaker_0"},
+ {"start": 27.76, "end": 27.86, "text": "I", "speaker": "speaker_0"},
+ {"start": 27.88, "end": 28.12, "text": "text", "speaker": "speaker_0"},
+ {"start": 28.14, "end": 28.26, "text": "the", "speaker": "speaker_0"},
+ {"start": 28.28, "end": 28.92, "text": "confirmation?", "speaker": "speaker_0"},
+
+ {"start": 29.60, "end": 29.86, "text": "Yes", "speaker": "speaker_1"},
+ {"start": 29.88, "end": 30.16, "text": "please.", "speaker": "speaker_1"},
+
+ {"start": 31.20, "end": 31.52, "text": "Done.", "speaker": "speaker_0"},
+ {"start": 31.70, "end": 32.02, "text": "Anything", "speaker": "speaker_0"},
+ {"start": 32.04, "end": 32.30, "text": "else?", "speaker": "speaker_0"},
+
+ {"start": 33.10, "end": 33.44, "text": "That's", "speaker": "speaker_1"},
+ {"start": 33.46, "end": 33.92, "text": "everything.", "speaker": "speaker_1"},
+ {"start": 34.10, "end": 34.48, "text": "Thanks.", "speaker": "speaker_1"}
+]
