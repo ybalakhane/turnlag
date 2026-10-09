@@ -13,8 +13,8 @@ cooperation from the agent. If you can get word timings for a call, you can get
 the number.
 
 ```
-pip install turnlag        # or: python -m turnlag <file.json>
-turnlag call.json
+pip install "git+https://github.com/ybalakhane/turnlag"
+turnlag call.json          # from a checkout: python -m turnlag call.json
 ```
 
 ```
@@ -98,19 +98,82 @@ ignoring it — the numbers are the output, the grade is a convenience.
 
 ## Why I wrote it
 
-I run a voice agent on a live dental phone line. My logs said it was fast. I
-believed that for months.
+I measured recorded test calls from a voice agent I built. The logs said it
+was fast. I believed that for months.
 
-Then I measured four recorded calls this way and got a median
-time-to-first-word of **2.1s, 3.0s, 3.3s, and 3.35s** — roughly three seconds
-of silence after the caller stops talking, on a system I would have described
-as responsive. The logs were not lying; they were answering a different
-question. Handler time was tens of milliseconds. Everything else lived in
-endpointing thresholds and TTS time-to-first-audio, which no single log line
-covered.
+The result is the set below: eleven of those calls had at least two measured
+replies. Nine medians fall between 1.93s and 3.38s, and two are worse, 4.78s
+and 5.64s. Roughly three seconds of silence after the caller stops talking, on
+a system I would have described as responsive, and sometimes longer. The logs
+were not lying; they were answering a different question. Handler time was
+tens of milliseconds. Everything else lived in endpointing thresholds and TTS
+time-to-first-audio, which no single log line covered.
 
 I would rather have the number that embarrasses me than the one that
 flatters me, so the tool ships with a grading scale that calls my own agent bad.
+
+## Measured results
+
+Eighteen word-timing files from acceptance-test calls on 2026-08-18. Synthetic
+test callers, a test schedule, my own voice agent, no real patients. These are
+test calls, not production traffic.
+
+Each file is a two-channel phone recording turned into word timings. I ran
+`python -m turnlag` on every file at the defaults: backchannels folded,
+barge-in excluded, gaps over 20s dropped, nearest-rank percentiles for p90 and
+p95. The p50 below is the median the tool prints. With an even number of
+replies that median is the average of the two central gaps. A call is listed
+when that run measured 2 or more replies.
+
+On this set the defaults did not fold a backchannel or drop a gap. Every
+included gap was already non-negative and at most 20 seconds.
+
+| Call | n | min | p50 |
+| --- | ---: | ---: | ---: |
+| A-cut1-CA3a723ad0471ab73b328cd5a265f922d1 | 8 | 1.04s | 3.35s |
+| A-cut1-CAacf9a259461271bb594e59be63eec501 | 8 | 0.04s | 2.10s |
+| A-cut1-CAeab589138e261d0019161a5ff554d8ec | 6 | 0.04s | 3.26s |
+| A-orig-CAdb4dfaa43705d9b949a666a9b5f74b91 | 6 | 0.04s | 3.38s |
+| B-CA21764d5e9efa6bd7fea4f106ca061a6d | 4 | 1.68s | 1.93s |
+| B-CA9876e32c5312c981897dcb6c7c374860 | 4 | 2.82s | 3.03s |
+| C-CA1613a3eeff5c68eea44b4bec0a4526e9 | 8 | 0.02s | 5.64s |
+| C-CA25241abc75feed305103626138d83eb4 | 9 | 0.00s | 3.10s |
+| D-CAde9c85ce0e11d528eb5041d59dd4a4af | 3 | 0.02s | 4.78s |
+| S-CA7d0294c3000ca7e72a956148f0d08b6c | 2 | 1.38s | 2.18s |
+| S-CAccda38671fb8648e370e3ebd5cade27c | 2 | 1.32s | 2.65s |
+
+Nine of those eleven medians sit between 1.93s and 3.38s. Two are worse:
+C-CA1613a3eeff5c68eea44b4bec0a4526e9 at 5.64s (n=8) and
+D-CAde9c85ce0e11d528eb5041d59dd4a4af at 4.78s (n=3). Ten are past 2.0s, which
+this tool calls bad. The 1.93s call is slow.
+
+The text report rounds to hundredths of a second. `--json` keeps three
+decimals, so three of these p50s print as 3.351s, 2.101s, and 3.259s. Same
+medians.
+
+Seven files are not in the table.
+
+- C-CA8121ba0ab4fcc986fd5d66ffe5eba3f5, C-CA99d2979be6a387992b15aa4f3ed1aeef,
+  C-CAe7b8703f92b8d772a4d89434ab79764f, and
+  C-CAf45c48d5f58d027b82058b5e3135d459. About 3.7 seconds each. One channel
+  says "We are sorry. An application error has occurred." The other channel is
+  the agent greeting. There is no caller-then-agent gap, so turnlag reports no
+  measurable turns.
+- A-CAdb4dfaa43705d9b949a666a9b5f74b91 is an empty list. Same call id as the
+  A-orig row above, which has the words. turnlag rejects the empty file
+  because no reader recognizes the payload.
+- D-CA3a5632728910920d348c43a6fbc1883f, the Spanish call. All 108 words are
+  speaker_0: the English greeting and the Spanish request landed on one
+  channel, so there is no second speaker and no gap.
+- D-CA272aae672e99e2358e864a8241b5005b. One measured reply, 0.02s in the text
+  report and 0.019s in `--json`. The file has three speakers. That 0.02s gap is
+  the opening speaker saying "Take your time" as the caller finishes. The
+  Spanish replies belong to a third speaker, so the default agent (whoever
+  speaks first) does not count them. One reply is below the two-reply rule.
+
+The lines the tool printed, including p90, p95, and max, are in
+[examples/measured-results.md](examples/measured-results.md). The word-timing
+files themselves are not in this repository.
 
 ## Tests
 
