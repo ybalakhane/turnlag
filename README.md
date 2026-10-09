@@ -98,21 +98,16 @@ ignoring it — the numbers are the output, the grade is a convenience.
 
 ## Why I wrote it
 
-I run a voice agent on a live dental phone line. My logs said it was fast. I
-believed that for months.
+I measured recorded test calls from a voice agent I built. The logs said it
+was fast. I believed that for months.
 
-Then I measured recorded calls this way. I first wrote down four medians,
-**2.1s, 3.0s, 3.3s, and 3.35s**. Those are four calls from the acceptance set
-below. 2.1s, 3.0s, and 3.3s are the printed
-medians 2.10s, 3.03s, and 3.26s rounded to a tenth. 3.35s is the fourth call
-as printed. That sentence left out the two slower calls. Of the eleven calls
-with at least two measured replies, nine medians fall between 1.93s and 3.38s,
-and two are worse: 4.78s and 5.64s. Roughly three seconds of silence after the
-caller stops talking, on a system I would have described as responsive, and
-sometimes longer. The logs were not lying; they were answering a different
-question. Handler time was tens of milliseconds. Everything else lived in
-endpointing thresholds and TTS time-to-first-audio, which no single log line
-covered.
+The result is the set below: eleven of those calls had at least two measured
+replies. Nine medians fall between 1.93s and 3.38s, and two are worse, 4.78s
+and 5.64s. Roughly three seconds of silence after the caller stops talking, on
+a system I would have described as responsive, and sometimes longer. The logs
+were not lying; they were answering a different question. Handler time was
+tens of milliseconds. Everything else lived in endpointing thresholds and TTS
+time-to-first-audio, which no single log line covered.
 
 I would rather have the number that embarrasses me than the one that
 flatters me, so the tool ships with a grading scale that calls my own agent bad.
@@ -155,12 +150,6 @@ this tool calls bad. The 1.93s call is slow.
 The text report rounds to hundredths of a second. `--json` keeps three
 decimals, so three of these p50s print as 3.351s, 2.101s, and 3.259s. Same
 medians.
-
-The 2.1s, 3.0s, 3.3s, and 3.35s figures above are these four rows:
-A-cut1-CAacf9a259461271bb594e59be63eec501 (2.10s),
-B-CA9876e32c5312c981897dcb6c7c374860 (3.03s),
-A-cut1-CAeab589138e261d0019161a5ff554d8ec (3.26s), and
-A-cut1-CA3a723ad0471ab73b328cd5a265f922d1 (3.35s).
 
 Seven files are not in the table.
 

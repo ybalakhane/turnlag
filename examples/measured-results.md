@@ -38,7 +38,7 @@ Nine medians are between 1.93s and 3.38s. Two are worse: 5.64s and 4.78s.
   verdict: BAD (p50 2.10s)
 ```
 
-`--json` p50 is 2.101. This is the 2.1s figure in the README.
+`--json` p50 is 2.101.
 
 ```
 ### A-cut1-CAeab589138e261d0019161a5ff554d8ec.words.json   (agent = speaker_0)
@@ -46,7 +46,7 @@ Nine medians are between 1.93s and 3.38s. Two are worse: 5.64s and 4.78s.
   verdict: BAD (p50 3.26s)
 ```
 
-`--json` p50 is 3.259. Rounded to a tenth, this is the 3.3s figure in the README.
+`--json` p50 is 3.259.
 
 ```
 ### A-orig-CAdb4dfaa43705d9b949a666a9b5f74b91.words.json   (agent = speaker_0)
@@ -65,8 +65,6 @@ Nine medians are between 1.93s and 3.38s. Two are worse: 5.64s and 4.78s.
   perceived time-to-first-word   n=4  min=2.82s  p50=3.03s  p90=3.36s  p95=3.36s  max=3.36s
   verdict: BAD (p50 3.03s)
 ```
-
-Rounded to a tenth, this is the 3.0s figure in the README.
 
 ```
 ### C-CA1613a3eeff5c68eea44b4bec0a4526e9.words.json   (agent = speaker_0)
@@ -97,8 +95,6 @@ Rounded to a tenth, this is the 3.0s figure in the README.
   perceived time-to-first-word   n=2  min=1.32s  p50=2.65s  p90=3.98s  p95=3.98s  max=3.98s
   verdict: BAD (p50 2.65s)
 ```
-
-The 3.35s README figure is A-cut1-CA3a723ad0471ab73b328cd5a265f922d1, as printed.
 
 On these sample sizes the nearest-rank p95 is the same gap as the max.
 
